@@ -1,0 +1,47 @@
+<div class="main container">
+    <div #graphContiner class="rounded-2 border border-secondary-subtle mb-1" id="graphContiner">
+        <div class="graph-action-item">
+            <button title="Zoom" class="btn btn-sm btn-primary" pTooltip="Zoom to fit" tooltipPosition="right"
+                (click)="fitGraphToCanvas()" [disabled]="!graphData">
+                <i class="bi bi-arrows-fullscreen"></i>
+            </button>
+            <button title="Screenshot" class="btn btn-sm btn-primary" pTooltip="Screenshot" tooltipPosition="right"
+                (click)="screenshotGraph()" [disabled]="!graphData">
+                <i class="bi bi-camera"></i>
+            </button>
+        </div>
+        <div id="graph"></div>
+    </div>
+    <div class="card">
+        <div class="card-header p-1 d-flex align-items-center gap-1">
+            <button class="btn btn-sm btn-primary" (click)="generateGraph()"><i class="bi bi-send me-2"></i>Send
+            </button>
+            <button class="btn btn-sm btn-warning" (click)="clearText()">
+                <i class="bi bi-x-lg me-2"></i>Clear
+            </button>
+            @if (loading) {
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            }
+            <div class="flex-grow-1"></div>
+            <div>
+                <div class="input-group input-group-sm">
+                    <input [type]="api_input_field_type" [(ngModel)]="openai_api_key" class="form-control shadow-none"
+                        placeholder="OpenAI Key" aria-label="OpenAi APi key" aria-describedby="openai_key">
+                    <span class="input-group-text" type="button" id="openai_key" (click)="togglekeyVisibility()">
+                        <i class="bi"
+                            [ngClass]="{'bi-eye-slash':api_input_field_type==='text', 'bi-eye':api_input_field_type==='password'}"></i>
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-sm btn-success text-nowrap" (click)="saveOpenAiKey()">
+                <i class="bi bi-floppy-fill me-2"></i>Save
+            </button>
+        </div>
+        <div class="card-body p-1">
+            <textarea #inputText class="form-control shadow-none" rows="3" [placeholder]="'Your texts here!'"
+                title="prompt" [disabled]="!openai_api_key"></textarea>
+        </div>
+    </div>
+</div>

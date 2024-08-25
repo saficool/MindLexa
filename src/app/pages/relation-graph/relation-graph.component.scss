@@ -1,0 +1,25 @@
+.main {
+  height: calc(100vh);
+  padding: 5px;
+  overflow: auto;
+}
+textarea {
+  resize: none;
+}
+#graphContiner {
+  height: calc(100vh - 150px);
+  position: relative;
+}
+.card#history-card .card-body {
+  overflow: auto;
+}
+
+.graph-action-item {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  display: flex;
+  gap: 5px;
+}
