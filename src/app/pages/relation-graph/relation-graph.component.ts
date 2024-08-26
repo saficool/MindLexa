@@ -55,7 +55,7 @@ export class RelationGraphComponent {
       this.localStorageManagerService.removeItem('openai_api_key')
       this.toastr.success('OpenAI key removed!', 'Success');
     }
-    setTimeout(() => { window.location.reload() }, 3000);
+    setTimeout(() => { window.location.reload() }, 2000);
   }
   private getOpenAiKey() {
     this.openai_api_key = this.localStorageManagerService.getItem('openai_api_key') || ""
