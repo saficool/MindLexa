@@ -14,10 +14,11 @@
     </div>
     <div class="card">
         <div class="card-header p-1 d-flex align-items-center gap-1">
-            <button class="btn btn-sm btn-primary" (click)="generateGraph()"><i class="bi bi-send me-2"></i>Send
+            <button class="btn btn-sm btn-primary d-flex text-nowrap" (click)="generateGraph()">
+                <i class="bi bi-send"></i><span class="ms-2 d-none d-sm-block">Generate</span>
             </button>
-            <button class="btn btn-sm btn-warning" (click)="clearText()">
-                <i class="bi bi-x-lg me-2"></i>Clear
+            <button class="btn btn-sm btn-warning d-flex text-nowrap" (click)="clearText()">
+                <i class="bi bi-x-lg"></i><span class="ms-2 d-none d-sm-block">Clear</span>
             </button>
             @if (loading) {
             <div class="spinner-border spinner-border-sm" role="status">
@@ -35,9 +36,15 @@
                     </span>
                 </div>
             </div>
-            <button class="btn btn-sm btn-success text-nowrap" (click)="saveOpenAiKey()">
-                <i class="bi bi-floppy-fill me-2"></i>Save
+            <button class="btn btn-sm btn-success d-flex text-nowrap" (click)="saveOpenAiKey()">
+                <i class="bi bi-floppy-fill"></i><span class="ms-2 d-none d-sm-block">Save</span>
             </button>
+
+            <button class="btn btn-sm btn-info d-flex text-nowrap"
+                onclick="window.open('https://github.com/saficool/MindLexa', '_blank')">
+                <i class="bi bi-github"></i><span class="ms-2 d-none d-sm-block">Source</span>
+            </button>
+
         </div>
         <div class="card-body p-1">
             <textarea #inputText class="form-control shadow-none" rows="3" [placeholder]="'Your texts here!'"
