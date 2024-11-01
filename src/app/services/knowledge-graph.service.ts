@@ -152,7 +152,7 @@ export class KnowledgeGraphService {
     ctx.save();
     ctx.translate(_x, _y);
 
-    ctx.fillStyle = '#f5f5f5';
+    ctx.fillStyle = '#ebf0f8';
     ctx.fillRect(- bckgDimensions[0] / 2, - bckgDimensions[1] / 2, bckgDimensions[0], bckgDimensions[1]);
 
     ctx.textAlign = 'center';
