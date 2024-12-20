@@ -28,8 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Publish to GitHub Pages
 
+`ng add angular-cli-ghpages`
 `ng build  --base-href "https://saficool.github.io/MindLexa/" --aot true`
 `npx angular-cli-ghpages --dir=dist/mind-lexa/browser`
 
 Reference video link
-https://www.youtube.com/watch?v=EWAzIUS7Knk
+[YouTube](https://www.youtube.com/watch?v=EWAzIUS7Knk)
